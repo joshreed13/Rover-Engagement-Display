@@ -3,17 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        Title="Remove Module State" mc:Ignorable="d">
-    <Grid Width="350">
+        Title="Remove Module State" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d">
+    <Grid>
         <StackPanel>
             <TextBlock Margin="0 0 0 10">Choose an existing state to remove.</TextBlock>
             <ComboBox SelectedItem="{Binding SelectedItem}" 
                       ItemsSource="{Binding SavedModuleStates, UpdateSourceTrigger=PropertyChanged}" 
-                      Width="150" HorizontalAlignment="Left"/>
+                      HorizontalAlignment="Stretch"/>
 
             <StackPanel Orientation="Horizontal" Margin="0 10 0 0" HorizontalAlignment="Right">
-                <Button Command="Close">Close</Button>
-                <Button Command="{Binding RemoveStateCommand}">Remove</Button>
+                <Button Command="{Binding RemoveStateCommand}" Width="50" Height="25">Remove</Button>
             </StackPanel>
         </StackPanel>
     </Grid>
