@@ -1,4 +1,3 @@
-﻿<<<<<<< HEAD
 ﻿<Window x:Class="RED.Views.ControlCenter.ControlCenterView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -6,23 +5,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:controlCenterViewModels="clr-namespace:RED.ViewModels.ControlCenter"
         xmlns:controlCenterViews="clr-namespace:RED.Views.ControlCenter"
-        xmlns:moduleViewModels="clr-namespace:RED.ViewModels.Modules"
-        xmlns:moduleViews="clr-namespace:RED.Views.Modules"
         xmlns:contexts="clr-namespace:RED.Contexts"
          WindowStartupLocation="CenterScreen"
         mc:Ignorable="d" d:DesignHeight="1080" d:DesignWidth="1920">
-    <Window.DataContext>
-=======
-﻿<UserControl x:Class="RED.Views.ControlCenter.ControlCenterView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:controlCenterViewModels="clr-namespace:RED.ViewModels.ControlCenter"
-             xmlns:controlCenterViews="clr-namespace:RED.Views.ControlCenter"
-             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
-             xmlns:contexts="clr-namespace:RED.Contexts"
-             mc:Ignorable="d" d:DesignHeight="1080" d:DesignWidth="1920">
     <Window.DataContext>
         <controlCenterViewModels:ControlCenterVM />
     </Window.DataContext>

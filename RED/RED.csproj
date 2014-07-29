@@ -85,7 +85,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Addons\AsyncTcpServer.cs" />
     <Compile Include="Addons\RelayCommand.cs" />
     <Compile Include="Contexts\BarContext.cs" />
     <Compile Include="Addons\LexiconEngine.cs" />
@@ -140,8 +139,6 @@
       <DependentUpon>ModuleManagerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ControlCenter\StateVM.cs" />
-    <Compile Include="ViewModels\Modules\NetworkingVM.cs" />
-    <Compile Include="ViewModels\Settings\ConfigurationVM.cs" />
     <Compile Include="Views\ControlCenter\ConsoleView.xaml.cs">
       <DependentUpon>ConsoleView.xaml</DependentUpon>
     </Compile>
@@ -157,21 +154,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Modules\NetworkingView.xaml">
-    <Page Include="Views\Settings\SettingsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Compile Include="Views\ControlCenter\ControlCenterView.xaml.cs">
       <DependentUpon>ControlCenterView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ControlCenter\StateView.xaml.cs">
       <DependentUpon>StateView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Modules\NetworkingView.xaml.cs">
-      <DependentUpon>NetworkingView.xaml</DependentUpon>
-    <Compile Include="Views\Settings\SettingsView.xaml.cs">
-      <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
