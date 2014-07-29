@@ -5,13 +5,11 @@
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using ViewModels.Modules;
-    using ViewModels.Settings;
 
     internal class ControlCenterModel
     {
         internal static IEnumerable<IModule> AllModules = new List<IModule>
         {
-            new SettingsAppearanceVM(),
             new NetworkingVM()
         };
 

@@ -1,7 +1,6 @@
 ﻿namespace RED.ViewModels.Modules
 {
     using ControlCenter;
-    using FirstFloor.ModernUI.Presentation;
     using Interfaces;
     using Models.Modules;
     using RED.Addons;

@@ -7,7 +7,7 @@
              mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300" d:DataContext="{d:DesignInstance Type=controlCenter:StateVM, IsDesignTimeCreatable=True}">
     <ScrollViewer>
         <StackPanel Margin="0 0 2 0">
-            <TextBlock Text="System Status" Style="{StaticResource Title}" Margin="0 0 0 5" Height="30" VerticalAlignment="Center" />
+            <TextBlock Text="System Status" Margin="0 0 0 5" Height="30" VerticalAlignment="Center" />
 
             <DockPanel LastChildFill="True" VerticalAlignment="Top" Margin="0 0 0 5">
                 <TextBlock Text="Control Mode:" Width="100" DockPanel.Dock="Left" Margin="0 0 5 0" VerticalAlignment="Center" />
@@ -29,7 +29,7 @@
                 <TextBlock Text="RED Version:" Width="100" DockPanel.Dock="Left" Margin="0 0 5 0" VerticalAlignment="Center" />
                 <TextBlock Text="{Binding Version}" FontWeight="Bold" VerticalAlignment="Center" />
             </DockPanel>
-            <TextBlock Text="Underglow" Style="{StaticResource Title}" Margin="0 0 0 5" Height="30" VerticalAlignment="Center" />
+            <TextBlock Text="Underglow" Margin="0 0 0 5" Height="30" VerticalAlignment="Center" />
             <DockPanel LastChildFill="True" VerticalAlignment="Top" Margin="0 0 0 5">
                 <TextBlock Text="Red Lights:" Width="100" DockPanel.Dock="Left" Margin="0 0 5 0" VerticalAlignment="Center" />
                 <TextBlock Text="{Binding CurrentRedLightValue, StringFormat=' {0:000}'}" FontWeight="Bold" VerticalAlignment="Center" DockPanel.Dock="Left" Margin="0 0 5 0" />

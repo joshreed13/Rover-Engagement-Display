@@ -1,7 +1,6 @@
 ﻿namespace RED.ViewModels.ControlCenter
 {
     using Addons;
-    using FirstFloor.ModernUI.Presentation;
     using System;
     using System.Collections.Generic;
     using System.IO;

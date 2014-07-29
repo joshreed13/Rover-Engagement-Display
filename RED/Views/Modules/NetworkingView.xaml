@@ -21,7 +21,7 @@
                 <Button Command="{Binding NetworkSendCommand}" IsEnabled="{Binding CanSend}" Margin="3 3 0 0" Width="35" IsDefault="True" DockPanel.Dock="Right">
                     <Button.Content>
                         <Canvas Width="10" Height="10" HorizontalAlignment="Center">
-                            <Path Width="10" Height="10" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="{StaticResource ButtonText}" Data="F1 M 19.0002,34L 19.0002,42L 43.7502,42L 33.7502,52L 44.2502,52L 58.2502,38L 44.2502,24L 33.7502,24L 43.7502,34L 19.0002,34 Z "/>
+                            <Path Width="10" Height="10" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="DarkGray" Data="F1 M 19.0002,34L 19.0002,42L 43.7502,42L 33.7502,52L 44.2502,52L 58.2502,38L 44.2502,24L 33.7502,24L 43.7502,34L 19.0002,34 Z "/>
                         </Canvas>
                     </Button.Content>
                 </Button>

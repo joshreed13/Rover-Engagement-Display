@@ -58,9 +58,6 @@
     <StartupObject>RED.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FirstFloor.ModernUI">
-      <HintPath>..\packages\ModernUI.WPF.1.0.5\lib\net45\FirstFloor.ModernUI.dll</HintPath>
-    </Reference>
     <Reference Include="SharpDX">
       <HintPath>$(SharpDXPackageBinDir)\SharpDX.dll</HintPath>
     </Reference>
@@ -89,6 +86,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Addons\AsyncTcpServer.cs" />
+    <Compile Include="Addons\RelayCommand.cs" />
     <Compile Include="Contexts\BarContext.cs" />
     <Compile Include="Addons\LexiconEngine.cs" />
     <Compile Include="Addons\SpeechCompositionEngine.cs" />
@@ -104,10 +102,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TelemetryWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="Contexts\TelemetryContext.cs" />
     <Compile Include="Contexts\ButtonContext.cs" />
     <Compile Include="Addons\ModuleStateSave.cs" />
@@ -119,10 +113,6 @@
     <Compile Include="Views\ControlCenter\SaveModuleStateView.xaml.cs">
       <DependentUpon>SaveModuleStateView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TelemetryWindow.xaml.cs">
-      <DependentUpon>TelemetryWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Page Include="Views\ControlCenter\ModuleManagerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -131,16 +121,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Settings\ConfigurationView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="Models\ControlCenter\ControlCenterModel.cs" />
     <Compile Include="Models\ControlCenter\ModuleManagerModel.cs" />
     <Compile Include="Models\ControlCenter\ConsoleModel.cs" />
     <Compile Include="Models\Modules\NetworkingModel.cs" />
     <Compile Include="Models\ControlCenter\StateModel.cs" />
-    <Compile Include="Models\Settings\SettingsAppearanceModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -157,21 +142,9 @@
     </Compile>
     <Compile Include="ViewModels\ControlCenter\StateVM.cs" />
     <Compile Include="ViewModels\Modules\NetworkingVM.cs" />
-    <Compile Include="ViewModels\Settings\ConfigurationVM.cs" />
     <Compile Include="Views\ControlCenter\ConsoleView.xaml.cs">
       <DependentUpon>ConsoleView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Settings\ConfigurationView.xaml.cs">
-      <DependentUpon>ConfigurationView.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Views\Settings\SettingsAppearanceView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Compile Include="Views\Settings\SettingsAppearanceView.xaml.cs">
-      <DependentUpon>SettingsAppearanceView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewModels\Settings\SettingsAppearanceVM.cs" />
     <Page Include="Views\ControlCenter\ControlCenterView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -188,10 +161,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Settings\SettingsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Compile Include="Views\ControlCenter\ControlCenterView.xaml.cs">
       <DependentUpon>ControlCenterView.xaml</DependentUpon>
     </Compile>
@@ -200,9 +169,6 @@
     </Compile>
     <Compile Include="Views\Modules\NetworkingView.xaml.cs">
       <DependentUpon>NetworkingView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Settings\SettingsView.xaml.cs">
-      <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

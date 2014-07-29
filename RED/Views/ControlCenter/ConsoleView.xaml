@@ -6,7 +6,7 @@
              xmlns:controlCenter="clr-namespace:RED.ViewModels.ControlCenter"
              mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300" d:DataContext="{d:DesignInstance Type=controlCenter:ConsoleVM, IsDesignTimeCreatable=True}">
     <DockPanel>
-        <TextBlock Text="Message Center" DockPanel.Dock="Top" Style="{StaticResource Heading2}" Margin="0 0 0 3"/>
+        <TextBlock Text="Message Center" DockPanel.Dock="Top" Margin="0 0 0 3"/>
         <TextBox Text="{Binding ConsoleText}" IsReadOnly = "True" IsHitTestVisible="True" TextWrapping="Wrap" Name="ConsoleTextBox"
                  VerticalScrollBarVisibility="Auto" BorderThickness="1" TextChanged="ConsoleText_Changed"/>
     </DockPanel>
