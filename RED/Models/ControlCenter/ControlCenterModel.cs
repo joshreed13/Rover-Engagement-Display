@@ -4,13 +4,12 @@
     using Interfaces;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using ViewModels.Modules;
 
     internal class ControlCenterModel
     {
         internal static IEnumerable<IModule> AllModules = new List<IModule>
         {
-            new NetworkingVM()
+
         };
 
         internal static readonly ObservableCollection<ButtonContext> ButtonContexts = new ObservableCollection<ButtonContext>();
