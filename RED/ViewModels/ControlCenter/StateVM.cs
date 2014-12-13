@@ -1,84 +1,14 @@
 ﻿namespace RED.ViewModels.ControlCenter
 {
-    using Interfaces;
+    using Caliburn.Micro;
     using Models.ControlCenter;
     using Properties;
     using System;
     using System.Linq;
 
-    public class StateVM : BaseVM, IModule
+    public class StateManager : PropertyChangedBase
     {
-        private static readonly StateModel Model = new StateModel();
-
-        public string Title
-        {
-            get
-            {
-                return Model.Title;
-            }
-        }
-        public bool InUse
-        {
-            get
-            {
-                return Model.InUse;
-            }
-            set
-            {
-                Model.InUse = value;
-            }
-        }
-        public bool IsManageable
-        {
-            get
-            {
-                return Model.IsManageable;
-            }
-        }
-
-        private enum UnderglowLight
-        {
-            Red,
-            Green,
-            Blue
-        }
-
-        public int CurrentRedLightValue
-        {
-            get
-            {
-                return Model.CurrentRedLightValue;
-            }
-            set
-            {
-                SetField(ref Model.CurrentRedLightValue, value);
-                SetUnderglowLight(UnderglowLight.Red, CurrentRedLightValue);
-            }
-        }
-        public int CurrentGreenLightValue
-        {
-            get
-            {
-                return Model.CurrentGreenLightValue;
-            }
-            set
-            {
-                SetField(ref Model.CurrentGreenLightValue, value);
-                SetUnderglowLight(UnderglowLight.Green, CurrentGreenLightValue);
-            }
-        }
-        public int CurrentBlueLightValue
-        {
-            get
-            {
-                return Model.CurrentBlueLightValue;
-            }
-            set
-            {
-                SetField(ref Model.CurrentBlueLightValue, value);
-                SetUnderglowLight(UnderglowLight.Blue, CurrentBlueLightValue);
-            }
-        }
+        private readonly StateModel _model = new StateModel();
 
         public string Version
         {
@@ -91,19 +21,20 @@
         {
             get
             {
-                return Model.CurrentControlMode;
+                return _model.CurrentControlMode;
             }
             set
             {
-                SetField(ref Model.CurrentControlMode, value);
-                RaisePropertyChanged("CurrentControlModeDisplay");
+                _model.CurrentControlMode = value;
+                NotifyOfPropertyChange();
+                NotifyOfPropertyChange(() => CurrentControlModeDisplay);
             }
         }
         public string CurrentControlModeDisplay
         {
             get
             {
-                var mode = Model.CurrentControlMode;
+                var mode = _model.CurrentControlMode;
                 return Enum.GetName(typeof(ControlMode), mode);
             }
         }
@@ -111,12 +42,13 @@
         {
             get
             {
-                return Model.NetworkHasConnection;
+                return _model.NetworkHasConnection;
             }
             set
             {
-                SetField(ref Model.NetworkHasConnection, value);
-                RaisePropertyChanged("NetworkConnectionStatus");
+                _model.NetworkHasConnection = value;
+                NotifyOfPropertyChange();
+                NotifyOfPropertyChange(() => NetworkConnectionStatus);
             }
         }
         public string NetworkConnectionStatus
@@ -130,13 +62,13 @@
         {
             get
             {
-                return Model.ControllerIsConnected;
+                return _model.ControllerIsConnected;
             }
             set
             {
-                SetField(ref Model.ControllerIsConnected, value);
-                RaisePropertyChanged("ConnectionStatus");
-                RaisePropertyChanged("ControllerConnectionStatus");
+                _model.ControllerIsConnected = value;
+                NotifyOfPropertyChange();
+                NotifyOfPropertyChange(() => ControllerConnectionStatus);
             }
         }
         public string ControllerConnectionStatus
@@ -150,36 +82,18 @@
         {
             get
             {
-                return Model.HazelIsReady;
+                return _model.HazelIsReady;
             }
             set
             {
-                SetField(ref Model.HazelIsReady, value);
+                _model.HazelIsReady = value;
+                NotifyOfPropertyChange();
             }
         }
 
-        public StateVM()
+        public StateManager()
         {
             CurrentControlMode = ParseEnum<ControlMode>(Settings.Default.DefaultControlMode);
-        }
-
-        private void SetUnderglowLight(UnderglowLight light, int value)
-        {
-            switch (light)
-            {
-                case UnderglowLight.Red:
-                    throw new NotImplementedException("Network communication not currently implemented.");
-                    //Send value over network
-                    break;
-                case UnderglowLight.Green:
-                    throw new NotImplementedException("Network communication not currently implemented.");
-                    //Send value over network
-                    break;
-                case UnderglowLight.Blue:
-                    throw new NotImplementedException("Network communication not currently implemented.");
-                    //Send value over network
-                    break;
-            }
         }
 
         public void NextControlMode()
@@ -205,6 +119,11 @@
             CurrentControlMode = currentIndex == 0
                 ? ParseEnum<ControlMode>(controlModes[controlModes.Count - 1])
                 : ParseEnum<ControlMode>(controlModes[currentIndex - 1]);
+        }
+
+        protected T ParseEnum<T>(string name)
+        {
+            return (T)Enum.Parse(typeof(T), name, true);
         }
     }
 }

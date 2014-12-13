@@ -4,6 +4,5 @@
     {
         string Title { get; }
         bool InUse { get; set; }
-        bool IsManageable { get; }
     }
 }
